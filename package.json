@@ -1,0 +1,19 @@
+{
+  "name": "wenu-api",
+  "version": "1.0.0",
+  "description": "wenu api server",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nelsonjoker/wenu-api.git"
+  },
+  "author": "Nelson Silva",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nelsonjoker/wenu-api/issues"
+  },
+  "homepage": "https://github.com/nelsonjoker/wenu-api#readme"
+}
