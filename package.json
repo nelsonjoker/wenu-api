@@ -4,7 +4,8 @@
   "description": "wenu api server",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "start": "nodemon -r dotenv/config index.js",
+    "test": "jasmine"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,17 @@
   "bugs": {
     "url": "https://github.com/nelsonjoker/wenu-api/issues"
   },
-  "homepage": "https://github.com/nelsonjoker/wenu-api#readme"
+  "homepage": "https://github.com/nelsonjoker/wenu-api#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "joi": "^17.4.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.11"
+  },
+  "devDependencies": {
+    "jasmine": "^3.7.0"
+  }
 }
