@@ -24,4 +24,4 @@ schema.set('toJSON', {
 });
 
 
-module.exports = mongoose.model('ProductCategory', schema, 'productcategory');
+module.exports = mongoose.model('ProductCategory', schema);

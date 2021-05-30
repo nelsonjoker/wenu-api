@@ -3,6 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const schema = new Schema({
+    category: { type: Schema.Types.ObjectId, ref: 'ProductCategory' },
     name: { type: String, required: true },
     description : String,
     price: Number,
@@ -26,4 +27,4 @@ schema.set('toJSON', {
 });
 
 
-module.exports = mongoose.model('Product', schema, 'product');
+module.exports = mongoose.model('Product', schema);

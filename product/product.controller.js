@@ -1,8 +1,20 @@
 const ProductModel = require('./product.model');
+const CategoryModel = require('./product-category.model');
 const Joi = require('joi');
 
 module.exports = {
     create : async (req, res, next) => {
+
+        const catSchema = Joi.object({cat: Joi.string().required().max(50)});
+        const {value: v, error: e} = schema.validate(req.params);
+        if(error){
+            return next(error);
+        }
+
+        const cat = await CategoryModel.findById(v.cat);
+        if(!cat){
+            throw new Error('Category not found');
+        }
 
         const schema = Joi.object({
             name: Joi.string().required().min(1).max(30),
@@ -15,6 +27,7 @@ module.exports = {
         if(error){
             return next(error);
         }
+        value.category = cat.id;
 
         const prod = new ProductModel(value);
         const r = await prod.save();
@@ -78,6 +91,7 @@ module.exports = {
     },
     getAll: async (req, res, next) => {
         const schema = Joi.object({
+            cat: Joi.string().required().max(50),
             page: Joi.number().default(0),
             count: Joi.number().default(10),
         });
@@ -85,7 +99,7 @@ module.exports = {
         if(error){
             return next(error);
         }
-        const products = await ProductModel.find()
+        const products = await ProductModel.find({category: value.cat})
             .limit(value.count)
             .skip(value.count * value.page);
         return res.json(products);
