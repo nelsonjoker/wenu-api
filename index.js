@@ -13,6 +13,9 @@ app.use(cors());
 //register routes
 app.use('/auth', require('./auth/auth.route'));
 app.use('/users', require('./user/user.route'));
+app.use('/table', require('./table/table.route'));
+app.use('/category', require('./product/product-category.route'));
+app.use('/product', require('./product/product.route'));
 
 
 //Capture All 404 errors

@@ -1,5 +1,5 @@
 const mongoose = require('mongoose'),
-config = require('../../config')
+config = require('../config')
 ;
 
 const options = {
@@ -9,7 +9,8 @@ const options = {
     bufferMaxEntries: 0,
     // all other approaches are now deprecated by MongoDB:
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
     
 };
 let count = 0;

@@ -1,9 +1,9 @@
 const jwt = require('jsonwebtoken');
 const Joi = require('joi');
-const AccountModel = require('../model/account.model'),
-    RefreshTokenModel = require('../model/refresh-token.model');
+const AccountModel = require('./account.model'),
+    RefreshTokenModel = require('./refresh-token.model');
 
-const {jwt_secret, roles} = require('../../config');
+const {jwt_secret, roles} = require('../config');
 const crypto = require('crypto');
 
 

@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { jwt_secret: secret } = require('../../config');
-const UserModel = require('../../user/model/user.model');
+//const UserModel = require('../../user/model/user.model');
 
 
 //TODO: check if user exists in db, instead of using JWT only
